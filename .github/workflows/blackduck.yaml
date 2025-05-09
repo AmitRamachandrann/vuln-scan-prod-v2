@@ -1,9 +1,9 @@
-name: Blackduck scan internalDemo2
+name: Blackduck scan demo
 
 on:
   push:
     branches:
-    - internalDemo2
+    - main
 
 jobs:
   blackduck-codescan:

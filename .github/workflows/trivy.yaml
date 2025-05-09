@@ -1,9 +1,9 @@
-name: Trivy Hybrid Scan internalDemo2
+name: Trivy Hybrid Scan demo
 
 on:
   push:
     branches:
-      - internalDemo2
+      - main
 
 jobs:
   trivy-hybrid-scan:

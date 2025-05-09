@@ -1,9 +1,9 @@
-name: Coverity scan internalDemo2
+name: Coverity scan demo
 
 on:
   push:
     branches:
-    - internalDemo2
+    - main
 
 jobs:
   coverity-codescan:
