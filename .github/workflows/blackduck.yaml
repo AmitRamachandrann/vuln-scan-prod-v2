@@ -1,0 +1,23 @@
+name: Blackduck scan internalDemo2
+
+on:
+  push:
+    branches:
+    - internalDemo2
+
+jobs:
+  blackduck-codescan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+
+      - name: Blackduck scan
+        uses: cloudbees-io-gha/black-duck-scan-publish@v1
+        with:
+          cloudbees-pat: ${{ secrets.CLOUDBEES_PROD_PAT }}
+          server-url: ${{ vars.BLACKDUCK_SERVER_URL }}
+          api-token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+
+
+

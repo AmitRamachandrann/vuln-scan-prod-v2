@@ -1,0 +1,23 @@
+name: Coverity scan internalDemo2
+
+on:
+  push:
+    branches:
+    - internalDemo2
+
+jobs:
+  coverity-codescan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+
+      - name: Coverity scan
+        uses: cloudbees-io-gha/coverity-scan-publish@v1
+        with:
+          cloudbees-pat: ${{ secrets.CLOUDBEES_PROD_PAT }}
+          server-url: ${{ vars.COVERITY_SERVER_URL }}
+          api-token: ${{ secrets.COVERITY_API_TOKEN }}
+
+
+
